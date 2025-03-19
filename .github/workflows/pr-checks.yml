@@ -41,6 +41,10 @@ jobs:
         with:
           args: >
             -Dsonar.host.url=https://sonarcloud.io
+            -Dsonar.organization=romaprok
+            -Dsonar.projectKey=romaprok_learning_language_app
+            -Dsonar.qualitygate.wait=true
+            -Dsonar.scm.provider=git
           
       - name: Check bundle size
         uses: preactjs/compressed-size-action@v2
