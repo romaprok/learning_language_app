@@ -1,3 +1,47 @@
+# Learning Language App
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=your-github-username_learning_language_app&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=your-github-username_learning_language_app)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=your-github-username_learning_language_app&metric=coverage)](https://sonarcloud.io/summary/new_code?id=your-github-username_learning_language_app)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=your-github-username_learning_language_app&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=your-github-username_learning_language_app)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=your-github-username_learning_language_app&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=your-github-username_learning_language_app)
+
+A React TypeScript application for language learning.
+
+## Getting Started
+
+### Prerequisites
+- Node.js 20.x
+- npm 9.x
+
+### Installation
+```bash
+npm install
+```
+
+### Development
+```bash
+npm run dev
+```
+
+### Testing
+```bash
+npm test
+```
+
+### Build
+```bash
+npm run build
+```
+
+## Features
+- TypeScript support
+- React Testing Library
+- SCSS styling
+- ESLint configuration
+- Vite build tool
+- Continuous Integration with GitHub Actions
+- Code Quality monitoring with SonarCloud
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
