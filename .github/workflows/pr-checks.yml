@@ -1,0 +1,122 @@
+name: Pull Request Checks
+
+on:
+  pull_request:
+    branches: [ main ]
+    types: [opened, synchronize, reopened]
+
+jobs:
+  quality:
+    name: Quality Checks
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+        
+      - name: TypeScript Check
+        run: npx tsc --noEmit
+        
+      - name: ESLint
+        run: npm run lint
+        
+      - name: Run Tests with Coverage
+        run: npm run test:coverage
+        
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarqube-scan-action@v5.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+            -Dsonar.host.url=https://sonarcloud.io
+            -Dsonar.organization=romaprok
+            -Dsonar.projectKey=romaprok_learning_language_app
+            -Dsonar.qualitygate.wait=true
+            -Dsonar.scm.provider=git
+          
+      - name: Check bundle size
+        uses: preactjs/compressed-size-action@v2
+        with:
+          pattern: 'dist/**/*.{js,css,html,json}'
+          
+  security:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+        
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: >
+            --all-projects
+            --severity-threshold=medium
+            --detection-depth=4
+            --prune-repeated-subdependencies
+            --fail-on=upgradable
+            --json-file-output=snyk-results.json
+          command: test
+        continue-on-error: false
+          
+  performance:
+    name: Performance Check
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+        
+      - name: Build
+        run: npm run build
+        
+      - name: Install serve
+        run: npm install -g serve
+        
+      - name: Start static server
+        run: |
+          serve dist -l 4173 &
+          sleep 10
+          curl -I http://localhost:4173
+        
+      - name: Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v10
+        with:
+          urls: |
+            http://localhost:4173
+          uploadArtifacts: false
+          temporaryPublicStorage: true
+          runs: 3
+          configPath: '.lighthouserc.json'
+          artifactName: lighthouse-report 
