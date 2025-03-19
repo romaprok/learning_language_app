@@ -22,7 +22,7 @@ jobs:
           cache: 'npm'
           
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --legacy-peer-deps
         
       - name: TypeScript Check
         run: npx tsc --noEmit
@@ -65,7 +65,7 @@ jobs:
           cache: 'npm'
           
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --legacy-peer-deps
         
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/node@master
@@ -96,7 +96,7 @@ jobs:
           cache: 'npm'
           
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --legacy-peer-deps
         
       - name: Build
         run: npm run build

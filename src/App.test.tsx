@@ -1,19 +1,20 @@
 /// <reference types="vitest/globals" />
-import { render, screen } from '@testing-library/react'
-import App from './App'
+import { describe, it, expect } from 'vitest';
+import { render, screen } from './test/test-utils';
+import App from './App';
 
 describe('App', () => {
   it('renders headline', () => {
-    render(<App />)
-    expect(screen.getByText(/React TypeScript App/i)).toBeInTheDocument()
-  })
+    render(<App />);
+    
+    expect(screen.getByRole('heading', { 
+      name: /react typescript app/i 
+    })).toBeInTheDocument();
+  });
 
-  it('renders HMR message', () => {
-    render(<App />)
-    const message = screen.getByText((content, element) => {
-      return element?.tagName.toLowerCase() === 'p' && content.includes('Edit')
-    })
-    expect(message).toBeInTheDocument()
-    expect(screen.getByText('src/App.tsx')).toBeInTheDocument()
-  })
-}) 
+  it('renders edit instruction text', () => {
+    render(<App />);
+    
+    expect(screen.getByText(/edit.*and save to test hmr/i)).toBeInTheDocument();
+  });
+}); 
