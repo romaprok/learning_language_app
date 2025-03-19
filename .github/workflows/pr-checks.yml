@@ -71,6 +71,17 @@ jobs:
         uses: snyk/actions/node@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: >
+            --all-projects
+            --severity-threshold=medium
+            --detection-depth=4
+            --prune-repeated-subdependencies
+            --package-manager=npm
+            --fail-on=upgradable
+            --json-file-output=snyk-results.json
+          command: test
+        continue-on-error: false
           
   performance:
     name: Performance Check
