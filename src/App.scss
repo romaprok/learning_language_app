@@ -1,0 +1,35 @@
+@import './styles/variables';
+
+.app {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  background-color: $primary-color;
+  padding: $spacing-lg;
+  color: white;
+
+  h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-lg;
+
+  code {
+    background-color: $light-color;
+    padding: $spacing-xs $spacing-sm;
+    border-radius: 4px;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  }
+} 
