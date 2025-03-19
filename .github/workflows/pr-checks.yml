@@ -77,7 +77,6 @@ jobs:
             --severity-threshold=medium
             --detection-depth=4
             --prune-repeated-subdependencies
-            --package-manager=npm
             --fail-on=upgradable
             --json-file-output=snyk-results.json
           command: test
