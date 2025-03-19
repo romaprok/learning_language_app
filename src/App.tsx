@@ -2,6 +2,7 @@ import './styles/global.scss'
 import './App.scss'
 
 function App() {
+    console.log('test')
   return (
     <div className="app">
       <header className="app-header">
