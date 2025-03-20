@@ -1,5 +1,5 @@
 import './styles/global.scss'
-import styles from './App.scss'
+import styles from './App.module.scss'
 
 function App() {
   return (
