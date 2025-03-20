@@ -1,13 +1,13 @@
 import './styles/global.scss'
-import './App.scss'
+import styles from './App.scss'
 
 function App() {
   return (
-    <div className="app">
-      <header className="app-header">
+    <div className={styles.app}>
+      <header className={styles.appHeader}>
         <h1>React TypeScript App</h1>
       </header>
-      <main className="app-main">
+      <main className={styles.appMain}>
         <p>Edit <code>src/App.tsx</code> and save to test HMR</p>
       </main>
     </div>
