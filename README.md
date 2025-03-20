@@ -1,9 +1,9 @@
 # Learning Language App
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=your-github-username_learning_language_app&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=your-github-username_learning_language_app)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=your-github-username_learning_language_app&metric=coverage)](https://sonarcloud.io/summary/new_code?id=your-github-username_learning_language_app)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=your-github-username_learning_language_app&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=your-github-username_learning_language_app)
-[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=your-github-username_learning_language_app&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=your-github-username_learning_language_app)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=romaprok_learning_language_app&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=romaprok_learning_language_app)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=romaprok_learning_language_app&metric=coverage)](https://sonarcloud.io/summary/new_code?id=romaprok_learning_language_app)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=romaprok_learning_language_app&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=romaprok_learning_language_app)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=romaprok_learning_language_app&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=romaprok_learning_language_app)
 
 A React TypeScript application for language learning.
 
@@ -11,26 +11,26 @@ A React TypeScript application for language learning.
 
 ### Prerequisites
 - Node.js 20.x
-- npm 9.x
+- Yarn 1.22.x
 
 ### Installation
 ```bash
-npm install
+yarn install
 ```
 
 ### Development
 ```bash
-npm run dev
+yarn dev
 ```
 
 ### Testing
 ```bash
-npm test
+yarn test
 ```
 
 ### Build
 ```bash
-npm run build
+yarn build
 ```
 
 ## Features
