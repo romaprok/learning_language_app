@@ -1,3 +1,76 @@
+# FlashCards Learning App
+
+A modern web application for creating and studying flashcards, built with React, TypeScript, and Material-UI.
+
+## Features
+
+- Create and manage flashcard lists
+- Add cards with terms, definitions, and examples
+- Responsive design with Material-UI components
+- Code splitting for optimal performance
+
+## Tech Stack
+
+- React with TypeScript
+- Material-UI for components
+- React Router for navigation
+- Vite for build tooling
+- SCSS Modules for styling
+- GitHub Actions for CI/CD
+
+## Getting Started
+
+1. Install dependencies:
+```bash
+yarn install
+```
+
+2. Start development server:
+```bash
+yarn dev
+```
+
+3. Build for production:
+```bash
+yarn build
+```
+
+## Project Structure
+
+```
+src/
+├── features/          # Feature-based folder structure
+│   ├── cardList/     # Card list feature
+│   ├── home/         # Home page feature
+│   └── shared/       # Shared components
+├── App.tsx           # Main app component
+└── main.tsx         # Application entry point
+```
+
+## CI/CD Pipeline
+
+### Continuous Integration
+- Automated testing on every push and pull request
+- Type checking and linting
+- Build verification
+- Artifact generation
+
+### Continuous Deployment
+- Automatic deployment to production on main branch
+- Build artifact preservation
+- Environment-specific configurations
+
+### Branching Strategy
+- `main`: Production branch
+- `develop`: Development branch
+- Feature branches: `feature/*`
+- Bug fix branches: `fix/*`
+- Release branches: `release/*`
+
+## License
+
+[Add your license here]
+
 # Learning Language App
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=romaprok_learning_language_app&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=romaprok_learning_language_app)
