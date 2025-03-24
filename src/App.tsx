@@ -2,6 +2,7 @@ import './styles/global.scss'
 import styles from './App.module.scss'
 
 function App() {
+    console.log('test')
   return (
     <div className={styles.app}>
       <header className={styles.appHeader}>
