@@ -4,15 +4,15 @@
 ## Type of Change
 <!-- Put an `x` in all the boxes that apply -->
 
-- [ ] 📦 New feature (non-breaking change which adds functionality)
-- [ ] 🐛 Bug fix (non-breaking change which fixes an issue)
-- [ ] 💥 Breaking change (fix or feature that would cause existing functionality to not work as expected)
-- [ ] 📝 Documentation update
-- [ ] 🎨 Style update (formatting, renaming)
-- [ ] ♻️ Code refactoring (no functional changes)
-- [ ] 🔧 Build configuration update
-- [ ] ⚡ Performance improvement
-- [ ] ✅ Test update
+- [ ] New feature (non-breaking change which adds functionality)
+- [ ] Bug fix (non-breaking change which fixes an issue)
+- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
+- [ ] Documentation update
+- [ ] Style update (formatting, renaming)
+- [ ] Code refactoring (no functional changes)
+- [ ] Build configuration update
+- [ ] Performance improvement
+- [ ] Test update
 
 ## Quality Checklist
 <!-- Put an `x` in all the boxes that apply -->
