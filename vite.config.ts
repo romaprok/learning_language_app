@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react'
 import path from 'path'
 
 export default defineConfig({
+  base: process.env.NODE_ENV === 'production' ? '/learning_language_app/' : '/',
   server: {
     port: 3000
   },
