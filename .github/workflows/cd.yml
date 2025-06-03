@@ -15,17 +15,18 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '20'
-        registry-url: 'https://registry.npmjs.org'
+        cache: 'yarn'
     
     - name: Install dependencies
-      run: |
-        npm config set registry https://registry.npmjs.org/
-        yarn install --frozen-lockfile
+      run: yarn install --frozen-lockfile
     
     - name: Build
       run: yarn build
     
-    - name: Deploy to GitHub Pages
+
+    # Add deployment steps based on your hosting platform
+    # Example for static hosting:
+    - name: Deploy to static hosting
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
